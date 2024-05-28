@@ -8,6 +8,8 @@
 
 .container {
     background-image: url(https://r4.wallpaperflare.com/wallpaper/728/926/542/library-ladders-candles-shelves-wallpaper-a28152c01d26befb6a08f2c5c0f85942.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 15px;
     display: flex;
     min-height: 100vh;
@@ -64,7 +66,7 @@
 }
 
 .form-input:not(:placeholder-shown) {
-    color: rgb(73, 73, 73);
+    color: white;
 }
 
 .form-input:focus + .form-label, .form-input:not(:placeholder-shown) + .form-label {
