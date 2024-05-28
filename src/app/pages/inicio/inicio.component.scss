@@ -1,21 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 .content-wrapper {
     font-family: 'Nunito' , sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(https://r4.wallpaperflare.com/wallpaper/728/926/542/library-ladders-candles-shelves-wallpaper-a28152c01d26befb6a08f2c5c0f85942.jpg);
+    background-image: url(https://r4.wallpaperflare.com/wallpaper/728/680/985/biblioteca-disea-estanterias-interior-wallpaper-c9c0288d71bacd2be657483f10a116fd.jpg);
     background-size: cover;
     background-position: center;
-    border-radius: 15px;
 }
 
 .container {
