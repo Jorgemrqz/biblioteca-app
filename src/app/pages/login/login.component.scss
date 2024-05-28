@@ -1,16 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .container {
     background-image: url(https://r4.wallpaperflare.com/wallpaper/728/926/542/library-ladders-candles-shelves-wallpaper-a28152c01d26befb6a08f2c5c0f85942.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 15px;
     display: flex;
     min-height: 100vh;
     font-family: "Nunito", sans-serif;
@@ -18,7 +11,7 @@
 
 .form {
     background-color: transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(30px);
     margin: auto;
     width: 90%;
     max-width: 400px;
