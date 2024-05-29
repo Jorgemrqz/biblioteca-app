@@ -6,6 +6,7 @@
     background-size: cover;
     min-height: 100vh;
     font-family: "Nunito", sans-serif;
+    overflow: auto;
 }
 
 .buscador {
@@ -22,6 +23,7 @@
     margin: 10px 10px;
     border-radius: 15px;
     border: 1px solid orange;
+    overflow: auto;
 }
 
 .libro-image {
