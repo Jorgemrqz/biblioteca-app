@@ -4,31 +4,36 @@
         <form>
             <div class="form-group">
                 <span>Nombre: </span>
-                <input type="text" placeholder="Ingrese su nombre*" required>
+                <input type="text" id="nombre" placeholder="Ingrese su nombre*" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" required>
             </div>
     
             <div class="form-group">
                 <span>Usuario: </span>
-                <input type="text" placeholder="Ingrese su usuario*" required>
+                <input type="text" id="usuario" placeholder="Ingrese su usuario*" [(ngModel)]="userName" [ngModelOptions]="{standalone: true}">
             </div>
     
             <div class="form-group">
                 <span>Correo Electronico: </span>
-                <input type="text" placeholder="Ingrese su correo elecronico*" required>
+                <input type="email" id="correo" placeholder="Ingrese su correo elecronico*" [(ngModel)]="mail" [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="form-group">
+                <span>Rol: </span>
+                <input type="text" id="rol" placeholder="Ingrese su rol admin* o client*" [(ngModel)]="rol" [ngModelOptions]="{standalone: true}">
             </div>
     
             <div class="form-group">
                 <span>Contrseña: </span>
-                <input type="password" placeholder="Ingrese su contraseña*" required>
+                <input type="password" id="contrseña" placeholder="Ingrese su contraseña*" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
             </div>
     
             <div class="form-group">
                 <span>Confirmar Contrseña: </span>
-                <input type="password" placeholder="Confirme su contraseña*" required>
+                <input type="password" id="contrseñaC" placeholder="Confirme su contraseña*" [(ngModel)]="passwordC" [ngModelOptions]="{standalone: true}">
             </div>
 
             <div class="button">
-                 <input type="button" value="Resgistrarse">
+                 <input type="button" value="Resgistrarse" (click)="registrar()">
             </div>
         </form>
     </div>
