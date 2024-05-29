@@ -1,10 +1,19 @@
 <div class="header">
-    <app-nav-bar/>
-    <!-- <app-nav-bar-users/> -->
-    <!-- <app-nav-bar-any/> -->
+    
+    @if (currentuser != undefined && role === 'admin') {
+        <app-nav-bar/>
+    }
+
+    @else if (currentuser != undefined && role === 'client') {
+        <app-nav-bar-users/>
+    }
+
+    @else {
+        <app-nav-bar-any/>
+    }
+
 </div>
 
 <div class="content">
     <router-outlet />
 </div>
-

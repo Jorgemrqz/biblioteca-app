@@ -13,4 +13,6 @@ import { NavBarAnyComponent } from './components/nav-bar-any/nav-bar-any.compone
 })
 export class AppComponent {
   title = 'biblioteca';
+  currentuser: any 
+  role: any 
 }

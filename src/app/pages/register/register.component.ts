@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FireStoreService } from '../../services/fire-store.service';
 import { FormsModule } from '@angular/forms';
 import { Usuario } from '../../domain/usuario';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
@@ -30,6 +31,7 @@ export class RegisterComponent {
     this.usuario.rol = this.rol
     if (this.password === this.passwordC && this.usuario.name != undefined && this.usuario.userName != undefined && this.usuario.mail != undefined && this.usuario.rol != undefined) {
       this.fireStoreService.registrarUsuario(this.usuario)
+      alert('Usuario creado correctamente')
       this.usuario = undefined
       this.name = ''
       this.mail = ''
