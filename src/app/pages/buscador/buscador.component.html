@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="buscador">
+        <label for="buscador"></label>
+        <input type="text" id="buscador" placeholder="Titulo del libro*" [(ngModel)]="titulo">
+        <input type="button" value="🔎 Buscar" (click)="buscarPelicula()">
+    </div>
+
+    <div class="content">
+        @if (libros != []) {
+            <ul>
+                @for (libro of libros; track libro) {
+                    <li>
+                        @if (libro.imageLinks != undefined) {
+                            <img src="{{ libro.imageLinks.smallThumbnail}}" alt="imagen de libro"> <br>
+                            {{ libro.title}}
+                        }
+                        <input type="button" value="Agregar Libro">
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>
