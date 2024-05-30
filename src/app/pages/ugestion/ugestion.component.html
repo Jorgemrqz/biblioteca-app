@@ -1,1 +1,26 @@
-<p>ugestion works!</p>
+
+<!-- <ul class="usuario-lista">
+    <li class="usuario-item">
+        <div class="usuario-container">
+            <span>{{usu.name}}</span> - <span>{{usu.mail}}</span> - <span>{{usu.rol}}</span>
+            <button (click)="borrar(usu.id)">Borrar</button>
+        </div>
+    </li>
+</ul> -->
+
+<div class="content">
+    <ul>
+        @for (usu of usuarios; track usu.userName) {
+            <div class="usuario-content">
+                <div class="usurio-details">
+                    <p>Nombre: {{usu.name}}</p>
+                    <p>Email: {{usu.mail}}</p>
+                    <p>Rol:  {{usu.rol}}</p>
+                    <p>Contraseña: {{usu.password}}</p> 
+                    <button class="btn-borrar"(click)="borrar(usu.id)">Borrar</button><br>
+                    <button class="btn-editar">Editar</button>
+                </div>
+            </div>
+        }
+    </ul>
+</div>
