@@ -1,10 +1,10 @@
 <div class="header">
     
-    @if (currentuser != undefined && role === 'admin') {
+    @if (role === 'admin') {
         <app-nav-bar/>
     }
 
-    @else if (currentuser != undefined && role === 'client') {
+    @else if (role === 'client') {
         <app-nav-bar-users/>
     }
 

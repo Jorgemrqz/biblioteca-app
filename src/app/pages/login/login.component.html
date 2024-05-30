@@ -11,12 +11,12 @@
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-input" id="password" placeholder=" " [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                <input type="password" class="form-input" id="password" placeholder=" " [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
                 <label for="password" class="form-label">Contraseña:</label>
                 <span class="form-line"></span>
             </div>
 
-            <input type="submit" value="Entrar" class="form-submit" (click)="verificarUsuario()">
+            <input type="button" value="Entrar" class="form-submit" (click)="verificarUsuario()" routerLink="">
 
             <p class="form-paragraph">¿Aún no tienes tu cuenta? <a routerLink= 'register' class="form-link">Entra aqui</a></p>
         </div>

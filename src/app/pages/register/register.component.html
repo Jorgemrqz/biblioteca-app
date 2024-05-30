@@ -33,7 +33,7 @@
             </div>
 
             <div class="button">
-                 @if (currentRol === undefined) {
+                 @if (currentRol === '') {
                     <input type="button" value="Resgistrarse" (click)="registrar()">
                  } @else {
                     <input type="button" value="Modificar" (click)="registrar()">

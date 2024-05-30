@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NavBarUsersComponent } from './components/nav-bar-users/nav-bar-users.component';
 import { NavBarAnyComponent } from './components/nav-bar-any/nav-bar-any.component';
+import { ComunicacionService } from './services/comunicacion.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,16 @@ import { NavBarAnyComponent } from './components/nav-bar-any/nav-bar-any.compone
 })
 export class AppComponent {
   title = 'biblioteca';
-  currentuser: any = 'a'
-  role: any = 'admin'
+  role: any = ''
+
+  constructor(private comunicacionService: ComunicacionService) { }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.comunicacionService.suscribe().subscribe(data => {
+      console.log(data);
+      this.role = data;
+    })
+  }
 }
