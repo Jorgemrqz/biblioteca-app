@@ -1,1 +1,7 @@
-<p>ugestion works!</p>
+<ul>
+    @for (usu of usuarios; track usu.userName) {
+        <li>{{usu.name}} - {{usu.mail}} - {{usu.mail}} - {{usu.rol}} - {{usu.password}}
+            <button (click)="borrar(usu.id)">Borrar</button><br><br>
+        </li>
+    }
+</ul>
