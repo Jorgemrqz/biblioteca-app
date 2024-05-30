@@ -34,9 +34,10 @@ export class UgestionComponent {
       this.fireStoreService.registrarUsuario(this.usuario)
     }
 
-    borrar(libroId: string) {
-      this.fireStoreService.borrarUsuarios(libroId).then(() => {
+    borrar(id: string) {
+      this.fireStoreService.borrarUsuarios(id).then(() => {
       }).catch(error => {
       });
+      this.ngOnInit()
     }
 }

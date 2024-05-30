@@ -12,21 +12,20 @@ import { ComunicacionService } from '../../services/comunicacion.service';
 export class NavBarUsersComponent {
   user: string;
 
-  constructor(private cominicacionService: ComunicacionService) {
+  constructor(private comunicacionService: ComunicacionService) {
     this.user = "";
   }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.cominicacionService.uSuscribe().subscribe(data => {
+    this.comunicacionService.uSuscribe().subscribe(data => {
       this.user = data;
     });
   }
 
   cerrarSesion() {
-    this.cominicacionService.setValue('');
-    this.cominicacionService.setUValue('');
-    console.log(this.user);
+    this.comunicacionService.setValue('');
+    this.comunicacionService.setUValue('');
   }
 }
