@@ -23,9 +23,9 @@ export class BuscadorComponent {
 
   }
 
-  buscarPelicula() {
+  buscarLibros() {
     this.libros = []
-    this.booksService.obtenerPelicula(this.titulo).subscribe(data => {
+    this.booksService.obtenerLibros(this.titulo).subscribe(data => {
       this.booksData = Object.assign({}, data)
 
       this.booksData.items.map((item: any) => {

@@ -8,7 +8,7 @@ export class BooksServiceService {
 
   constructor(private http: HttpClient) { }
 
-  obtenerPelicula(title: string) {
+  obtenerLibros(title: string) {
     return this.http.get(`https://www.googleapis.com/books/v1/volumes?q=s${title}`)
   }
 }

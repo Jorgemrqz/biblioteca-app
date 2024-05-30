@@ -1,3 +1,26 @@
-<div>
-    <h1>Catalogo Works</h1>
+<div class="container">
+    <<div class="content">
+
+        <ul>
+            @for (libro of libros; track libro) {
+            <li>
+                <div class="libros-content">
+
+                    <div class="libro-image">
+                        <img src="{{ libro.imageLinks}}" alt="imagen de libro">
+                    </div>
+                    <div class="libro-details">
+                        <h2>{{ libro.title }}</h2>
+                        <br>
+                        <h4>{{ libro.publisher }}</h4>
+                        <br>
+                        <p>{{ libro.description }}</p>
+                    </div>
+
+                </div>
+            </li>
+            }
+        </ul>
+
+</div>
 </div>

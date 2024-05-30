@@ -25,4 +25,8 @@ export class FireStoreService {
   guardarLibro(libro: Libro) {
     addDoc(collection(this.fireStore, 'libros'), Object.assign({}, libro))
   }
+
+  obtenerLibros() {
+    return getDocs(query(collection(this.fireStore, 'libros')))
+  }
 }
