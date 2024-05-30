@@ -33,7 +33,11 @@
             </div>
 
             <div class="button">
-                 <input type="button" value="Resgistrarse" (click)="registrar()" routerLink="login">
+                 @if (currentRol === undefined) {
+                    <input type="button" value="Resgistrarse" (click)="registrar()">
+                 } @else {
+                    <input type="button" value="Modificar" (click)="registrar()">
+                 }
             </div>
         </form>
     </div>

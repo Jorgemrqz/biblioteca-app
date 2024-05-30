@@ -1,20 +1,19 @@
 <header>
     <div class="interior">
-        <a routerLink="Inicio" class="logo"><img src="assets\logo.png" alt=""></a>
+        <a routerLink='' class="logo"><img src="assets\logo.png" alt=""></a>
         <nav class="navegacion">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Catálogo</a></li>
+                <li><a routerLink="/catalogo">Catálogo</a></li>
                 <li class="submenu">
-                    <a href="">Opciones</a>
+                    <a>Opciones</a>
                     <ul class="subindex">
-                        <li><a href="">Gestionar usuarios</a></li>
-                        <li><a routerLink="buscador">Agregar libros</a></li>
-                        <li><a href="">Editar perfil</a></li>
-                        <li><a href="">Cerrar sesión</a></li>
+                        <li><a routerLink="/ugestion">Gestionar usuarios</a></li>
+                        <li><a routerLink="/buscador">Agregar libros</a></li>
+                        <li><a routerLink="/register">Editar perfil</a></li>
+                        <li><a routerLink=''>Cerrar sesión</a></li>
                     </ul>
                 </li>
-                <li><a>Admin</a></li>
+                <li><a>{{ currentUser }}</a></li>
             </ul>
         </nav>
     </div>

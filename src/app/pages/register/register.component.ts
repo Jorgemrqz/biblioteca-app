@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FireStoreService } from '../../services/fire-store.service';
 import { FormsModule } from '@angular/forms';
-import { Usuario } from '../../domain/usuario';
+import { Usuario } from '../../domain/Usuario';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -19,6 +19,7 @@ export class RegisterComponent {
   rol: any
   password: any
   passwordC: any
+  currentRol: any
 
   constructor(private fireStoreService: FireStoreService) { }
 

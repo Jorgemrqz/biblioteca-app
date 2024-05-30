@@ -1,18 +1,17 @@
 <header>
     <div class="interior">
-        <a routerLink="Inicio" class="logo"><img src="assets\logo.png" alt=""></a>
+        <a routerLink='' class="logo"><img src="assets\logo.png" alt=""></a>
         <nav class="navegacion">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Catálogo</a></li>
+                <li><a routerLink='/catalogo'>Catálogo</a></li>
                 <li class="submenu">
-                    <a href="">Opciones</a>
+                    <a>Opciones</a>
                     <ul class="subindex">
-                        <li><a href="">Editar perfil</a></li>
-                        <li><a href="">Cerrar Sesión</a></li>
+                        <li><a routerLink='/register'>Editar perfil</a></li>
+                        <li><a routerLink=''>Cerrar Sesión</a></li>
                     </ul>
                 </li>
-                <li><a href="#">user</a></li>
+                <li><a>{{ user }}</a></li>
             </ul>
         </nav>
     </div>

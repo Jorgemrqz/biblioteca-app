@@ -5,20 +5,20 @@
         <div class="form-container">
 
             <div class="form-group">
-                <input type="text" class="form-input" id="user" placeholder=" ">
-                <label for="user" class="form-label">Correo Electronico:</label>
+                <input type="text" class="form-input" id="user" placeholder=" " [(ngModel)]="user" [ngModelOptions]="{standalone: true}">
+                <label for="user" class="form-label">Nombre de usuario:</label>
                 <span class="form-line"></span>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-input" id="password" placeholder=" ">
+                <input type="text" class="form-input" id="password" placeholder=" " [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
                 <label for="password" class="form-label">Contraseña:</label>
                 <span class="form-line"></span>
             </div>
 
-            <input type="submit" value="Entrar" class="form-submit">
+            <input type="submit" value="Entrar" class="form-submit" (click)="verificarUsuario()">
 
-            <p class="form-paragraph">¿Aún no tienes tu cuenta? <a routerLink= "register" class="form-link">Entra aqui</a></p>
+            <p class="form-paragraph">¿Aún no tienes tu cuenta? <a routerLink= 'register' class="form-link">Entra aqui</a></p>
         </div>
     </form>
 </div>

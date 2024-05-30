@@ -7,7 +7,7 @@ import { NavBarAnyComponent } from './components/nav-bar-any/nav-bar-any.compone
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavBarComponent,NavBarUsersComponent,NavBarAnyComponent],
+  imports: [RouterOutlet, NavBarComponent, NavBarUsersComponent, NavBarAnyComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
