@@ -11,22 +11,26 @@ export class FireStoreService {
   constructor(private fireStore: Firestore) { }
 
   registrarUsuario(usuario: Usuario) {
-    addDoc(collection(this.fireStore, 'usuarios'), Object.assign({}, usuario))
+    addDoc(collection(this.fireStore, 'usuarios'), Object.assign({}, usuario));
   }
 
   obtenerUsuarios() {
-    return getDocs(query(collection(this.fireStore, 'usuarios')))
+    return getDocs(query(collection(this.fireStore, 'usuarios')));
   }
 
   borrarUsuarios(usuarioId: string){
-    return deleteDoc(doc(this.fireStore,'usuarios',usuarioId))
+    return deleteDoc(doc(this.fireStore,'usuarios',usuarioId));
   }
 
   guardarLibro(libro: Libro) {
-    addDoc(collection(this.fireStore, 'libros'), Object.assign({}, libro))
+    addDoc(collection(this.fireStore, 'libros'), Object.assign({}, libro));
   }
 
   obtenerLibros() {
-    return getDocs(query(collection(this.fireStore, 'libros')))
+    return getDocs(query(collection(this.fireStore, 'libros')));
+  }
+
+  borrarLibro(id: string) {
+    return deleteDoc(doc(this.fireStore,'libros',id));
   }
 }
