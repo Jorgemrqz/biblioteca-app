@@ -14,7 +14,7 @@
                             @if (libro.imageLinks != undefined) {
                                 <div class="libro-image">
                                     <img src="{{ libro.imageLinks.smallThumbnail}}" alt="imagen de libro">
-                                    <input type="button" value="Agregar Libro" class="button">
+                                    <input type="button" value="Agregar Libro" class="button" (click)="guardarLibro(libro.title, libro.authors, libro.publisher, libro.description, libro.imageLinks)">
                                 </div>
                                 <div class="libro-details">
                                     <h2>{{ libro.title }}</h2>

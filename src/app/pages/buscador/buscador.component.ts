@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { BooksServiceService } from '../../services/books-service.service';
 import { FormsModule } from '@angular/forms';
+import { Libro } from '../../domain/libro';
+import { FireStoreService } from '../../services/fire-store.service';
 
 @Component({
   selector: 'app-buscador',
@@ -13,8 +15,9 @@ export class BuscadorComponent {
   booksData: any;
   titulo: string = '';
   libros: any[] = []
+  libro? : Libro
 
-  constructor(private booksService: BooksServiceService) { }
+  constructor(private booksService: BooksServiceService, private fireStoreService: FireStoreService) { }
 
   ngOnInit(): void {
 
@@ -32,6 +35,17 @@ export class BuscadorComponent {
       })
     })
     this.titulo = ''
+  }
+  guardarLibro(title:any, authors: any, publisher: any,  description: any, imageLink: any) {
+    this.libro = new Libro()
+    this.libro.title = title
+    this.libro.authors = authors
+    this.libro.publisher = publisher 
+    this.libro.description = description
+    this.libro.imageLink = imageLink
+    this.fireStoreService.guardarLibro(this.libro)
+    alert('libro agregado correctamente')
+    this.libro = undefined
   }
 
 }
