@@ -11,9 +11,11 @@ import { ComunicacionService } from '../../services/comunicacion.service';
 })
 export class NavBarUsersComponent {
   user: string;
+  id: string;
 
   constructor(private comunicacionService: ComunicacionService) {
     this.user = "";
+    this.id = '';
   }
 
   ngOnInit(): void {
@@ -22,10 +24,19 @@ export class NavBarUsersComponent {
     this.comunicacionService.uSuscribe().subscribe(data => {
       this.user = data;
     });
+
+    this.comunicacionService.suscribeOId().subscribe(data => {
+      this.id = data;
+    })
+
   }
 
   cerrarSesion() {
     this.comunicacionService.setValue('');
     this.comunicacionService.setUValue('');
+  }
+
+  enviarid() {
+    this.comunicacionService.setId(this.id)
   }
 }

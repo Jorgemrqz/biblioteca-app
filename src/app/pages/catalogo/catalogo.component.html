@@ -10,7 +10,6 @@
                         <img src="{{ libro.imageLink.thumbnail}}" alt="imagen de libro">
                         @if (rol === 'admin') {
                         <button class="btn-borrar" (click)="borrarlibro(libro.id)">Borrar</button><br>
-                        <button class="btn-editar">Editar</button>
                         }
                     </div>
                     <div class="libro-details">

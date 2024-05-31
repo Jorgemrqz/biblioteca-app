@@ -34,8 +34,9 @@ export class LoginComponent {
     this.users.map((data: any) => {
      
       if(this.user === data.userName && this.password === data.password) {
-        this.comunicacionService.setValue(data.rol)
-        this.comunicacionService.setUValue(data.userName)
+        this.comunicacionService.setValue(data.rol);
+        this.comunicacionService.setUValue(data.userName);
+        this.comunicacionService.setId(data.id);
       }
     })
   }
