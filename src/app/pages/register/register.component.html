@@ -20,11 +20,13 @@
                     [ngModelOptions]="{standalone: true}">
             </div>
 
+            @if (currentRol === 'admin') {
             <div class="form-group">
                 <span>Rol: </span>
                 <input type="text" id="rol" placeholder="Ingrese su rol admin* o client*" [(ngModel)]="rol"
                     [ngModelOptions]="{standalone: true}">
             </div>
+            }
 
             <div class="form-group">
                 <span>Contrseña: </span>
@@ -43,7 +45,11 @@
             <div class="button">
                 @if (currentRol === '') {
                 <input type="button" value="Resgistrarse" (click)="registrar()" routerLink="/login">
-                } @else {
+                }
+                @else if (currentRol === 'client') {
+                <input type="button" value="Modificar" (click)="modificar()" routerLink="">
+                }
+                @else {
                 <input type="button" value="Modificar" (click)="modificar()" routerLink="/ugestion">
                 }
             </div>

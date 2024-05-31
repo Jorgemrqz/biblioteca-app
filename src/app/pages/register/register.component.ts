@@ -60,7 +60,7 @@ export class RegisterComponent {
     this.usuario.userName = this.userName;
     this.usuario.mail = this.mail;
     this.usuario.password = this.password;
-    this.usuario.rol = this.rol;
+    this.usuario.rol = 'client';
     if (this.password === this.passwordC && this.usuario.name != '' && this.usuario.userName != '' && this.usuario.mail != '' && this.usuario.rol != '') {
       this.fireStoreService.registrarUsuario(this.usuario);
       alert('Usuario creado correctamente');
@@ -70,7 +70,6 @@ export class RegisterComponent {
       this.userName = '';
       this.password = '';
       this.passwordC = '';
-      this.rol = '';
     } else {
       alert('Error al crear el usuario verifique que los campos han sido llenados correctamente');
     }
