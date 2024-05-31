@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, deleteDoc, doc, getDocs, query } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, deleteDoc, doc, getDoc, getDocs, query } from '@angular/fire/firestore';
 import { Usuario } from '../domain/Usuario';
 import { Libro } from '../domain/libro';
 
@@ -18,8 +18,12 @@ export class FireStoreService {
     return getDocs(query(collection(this.fireStore, 'usuarios')));
   }
 
-  borrarUsuarios(usuarioId: string){
-    return deleteDoc(doc(this.fireStore,'usuarios',usuarioId));
+  obtenerUsuario(id: string) {
+    return getDoc(doc(this.fireStore, 'usuarios', id))
+  }
+
+  borrarUsuarios(usuarioId: string) {
+    return deleteDoc(doc(this.fireStore, 'usuarios', usuarioId));
   }
 
   guardarLibro(libro: Libro) {
@@ -31,6 +35,6 @@ export class FireStoreService {
   }
 
   borrarLibro(id: string) {
-    return deleteDoc(doc(this.fireStore,'libros',id));
+    return deleteDoc(doc(this.fireStore, 'libros', id));
   }
 }

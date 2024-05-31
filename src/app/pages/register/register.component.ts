@@ -21,6 +21,7 @@ export class RegisterComponent {
   password: string;
   passwordC: string;
   currentRol: string;
+  id: string;
 
   constructor(private fireStoreService: FireStoreService, private comunicacionService: ComunicacionService) {
     this.name = '';
@@ -30,6 +31,7 @@ export class RegisterComponent {
     this.passwordC = '';
     this.rol = '';
     this.currentRol = '';
+    this.id = '';
   }
 
   ngOnInit(): void {
@@ -38,6 +40,18 @@ export class RegisterComponent {
     this.comunicacionService.suscribe().subscribe(data => {
       this.currentRol = data;
     });
+
+    this.comunicacionService.susbribeOUsuario().subscribe(data => {
+      this.name = data.name;
+      this.mail = data.mail;
+      this.userName = data.userName;
+      this.password = data.password;
+      this.rol = data.rol;
+    });
+
+    this.comunicacionService.suscribeOId().subscribe(data => {
+      this.id = data;
+    })
   }
 
   registrar() {
@@ -60,5 +74,22 @@ export class RegisterComponent {
     } else {
       alert('Error al crear el usuario verifique que los campos han sido llenados correctamente');
     }
+  }
+
+  modificar() {
+    this.fireStoreService.borrarUsuarios(this.id);
+    this.usuario = new Usuario();
+    this.usuario.set(this.name, this.userName, this.mail, this.rol, this.password);
+
+    this.fireStoreService.registrarUsuario(this.usuario);
+    alert('Usuario modificado correctamente');
+    this.usuario = undefined;
+    this.name = '';
+    this.mail = '';
+    this.userName = '';
+    this.password = '';
+    this.passwordC = '';
+    this.rol = '';
+
   }
 }
