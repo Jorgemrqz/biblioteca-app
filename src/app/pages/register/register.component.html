@@ -29,14 +29,14 @@
             }
 
             <div class="form-group">
-                <span>Contrseña: </span>
+                <span>Contraseña: </span>
                 <input type="password" id="contrseña" placeholder="Ingrese su contraseña*" [(ngModel)]="password"
                     [ngModelOptions]="{standalone: true}">
             </div>
 
             @if (currentRol === '') {
             <div class="form-group">
-                <span>Confirmar Contrseña: </span>
+                <span>Confirmar Contraseña: </span>
                 <input type="password" id="contrseñaC" placeholder="Confirme su contraseña*" [(ngModel)]="passwordC"
                     [ngModelOptions]="{standalone: true}">
             </div>
@@ -44,7 +44,7 @@
 
             <div class="button">
                 @if (currentRol === '') {
-                <input type="button" value="Resgistrarse" (click)="registrar()" routerLink="/login">
+                <input type="button" value="Registrarse" (click)="registrar()" routerLink="/login">
                 }
                 @else if (currentRol === 'client') {
                 <input type="button" value="Modificar" (click)="modificar()" routerLink="">
